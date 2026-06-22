@@ -44,9 +44,9 @@ without cutting corners on correctness.
 |----------------|---------------------|
 | **Architecture** | Chose the stack (Capacitor + React + TypeScript strict + Vite + Supabase) and the rationale for each layer; designed the client (TanStack Query + Zustand + RHF/Zod) and server (Postgres + Edge Functions) split. |
 | **Database design** | Designed a 35-table relational schema for an ERP/GST/double-entry domain, with enums, constraints, indexes, and **append-only ledgers** enforced by triggers. |
-| **Money & correctness** | Locked the core invariants: **money in integer paise, quantity in integer milli-kg**, never floats; scale only on display. Built valuation (WAC/FIFO) and GST logic as pure, unit-tested functions. |
-| **Security** | Designed **Row-Level Security** (default-deny, per-role policies), `SECURITY DEFINER` functions with pinned `search_path` and least-privilege grants, finance-table denial for the ops role, CSP, and an immutable audit log. |
-| **Server logic** | Implemented atomic transaction functions (complete-job-card, receive-inward, create-dispatch, settle-payment) and 18 Edge Functions for GST, valuation, vouchers, and reporting. |
+| **Money & correctness** | Locked the core invariants: **money in integer paise, quantity in integer milli-kg**, never floats; scale only on display. Money/quantity conversion and finance-derivation logic are pure, unit-tested functions; valuation (WAC/FIFO) runs server-side. |
+| **Security** | Designed **Row-Level Security** (default-deny, per-role policies), `SECURITY DEFINER` functions with pinned `search_path` and least-privilege grants, finance-table denial for the ops role, CSP, and **append-only ledgers** (UPDATE/DELETE blocked by triggers). |
+| **Server logic** | Implemented atomic transaction functions (complete-job-card, receive-inward, create-dispatch, settle-payment) and 19 Edge Functions for GST, valuation, vouchers, and reporting. |
 | **CI/CD** | Maintained a GitHub Actions pipeline (lint → type-check → test → build, with APK build gated to releases) and the signing config for a release APK. |
 | **Testing & QA** | Built the test suite (**51 tests**), ran whole-product QA passes, and kept four quality gates green (lint 0 / strict TS / tests / build) at every commit. |
 | **AI-agent orchestration** | Wrote the execution prompts, set the coding standards and lint rules the agent had to satisfy, reviewed every diff, caught regressions, and integrated the results — the human-in-the-loop that kept quality high. |

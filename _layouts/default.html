@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="logo">S</span> Steel ERP</a>
+      <nav class="nav-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/08-product-docs/CASE-STUDY.html' | relative_url }}">Case study</a>
+        <a class="hide-sm" href="{{ '/07-outcome-and-impact.html' | relative_url }}">Outcome</a>
+        <a href="https://github.com/nishantpatel9671/steel-erp-case-study">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap doc">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong>Steel ERP — Product &amp; Engineering Case Study</strong><br>
+        <span class="muted">Built solo (product + engineering). Business identifiers anonymized; screenshots show owner-approved data.</span>
+      </div>
+      <div class="muted">
+        <a href="https://github.com/nishantpatel9671/steel-erp-case-study">GitHub</a> ·
+        <a href="{{ '/' | relative_url }}">Home</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

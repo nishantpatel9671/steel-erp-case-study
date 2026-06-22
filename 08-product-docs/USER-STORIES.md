@@ -53,7 +53,7 @@ deliveries are tracked.*
 
 **D1.** *As Ops, I want stock valued by cost lots, so that closing value is accurate.*
 - ✓ Ledger sum equals current stock; no negative availability.
-- ✓ WAC (default) / FIFO consumption passes golden-number tests **to the paisa**.
+- ✓ WAC (default) / FIFO valuation runs server-side; the money/quantity conversion it relies on is unit-tested **to the paisa**.
 
 **D2.** *As Ops, I want to log pickling loss and scrap, so that raw losses are recorded correctly.*
 - ✓ Pickling loss moves quantity raw → scrap exactly; scrap statuses are settable.
@@ -78,7 +78,7 @@ production is tracked.*
 **F1.** *As Ops, I want to dispatch an order across trucks with a correct GST invoice, so that shipping
 and billing are right.*
 - ✓ Invoice numbers are **gap-free per series**; inter-state → IGST, intra-state → CGST+SGST.
-- ✓ E-Way prompt appears above ₹50,000 (₹49k no prompt, ₹51k prompts).
+- ✓ The E-Way bill no./date can be recorded on the dispatch (manual entry or OCR-extracted).
 
 **F2.** *As Fin, I want job-work dispatches billed as charges-only, so that customer material is never
 treated as a taxable goods sale.*
@@ -123,8 +123,9 @@ statements reflect reality, not stale numbers.*
 **I1.** *As any user, I want universal search, so that I can find any order/bill/dispatch/party fast.*
 **I2.** *As an owner, I want alerts for low stock and dies due for reorder, so that I act in time.*
 **I3.** *As any user, I want a light/dark theme, so that the app is comfortable to use.*
-**I4.** *As Admin, I want an immutable audit log, so that every change is attributable.*
-- ✓ Every create/edit/delete is logged with user + timestamp; ledgers are append-only.
+**I4.** *As Admin, I want the books to be tamper-evident, so that financial records can't be quietly altered.*
+- ✓ The financial & stock ledgers are **append-only** — UPDATE/DELETE are blocked by a DB trigger.
+- ◑ An admin-only `audit_log` table is provisioned for mutation logging (generic per-mutation trigger not yet wired).
 
 ---
 

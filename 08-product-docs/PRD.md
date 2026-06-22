@@ -28,7 +28,7 @@ The business runs two business models (Purchase–Sale and Job-Work) on manual t
 |------|----------------|
 | Digitize the full order-to-cash chain | All core modules live on a real backend (achieved: 28 screens) |
 | Exact financial maths | Integer-paise arithmetic; valuation tests pass to the paisa |
-| Balanced, auditable books | `verify_ledger()` returns balanced; append-only ledgers + audit log |
+| Balanced, auditable books | `verify_ledger()` returns balanced; append-only ledgers (trigger-blocked) |
 | Correct GST treatment | Automated intra/inter split; job-work billed charges-only (SAC) |
 | Zero run cost | ₹0/month, no payment card attached |
 | Installable release | Signed-APK CI pipeline |
@@ -65,7 +65,7 @@ The business runs two business models (Purchase–Sale and Job-Work) on manual t
 | F9 | Draw benches + utilisation | Ops | ✅ |
 | F10 | Dies & Stores (dies + consumables + spare bills) — add/remove/adjust/rework | Dies & Stores | ✅ |
 | F11 | Dispatch (sale + job-work) + multi-truck + shared invoice sequence | Dispatch | ✅ |
-| F12 | GST + E-Way auto-fill | Dispatch/GST | ✅ |
+| F12 | GST returns + E-Way bill no./date capture (manual + OCR) | Dispatch/GST | ✅ |
 | F13 | Finance: COA, journal, vouchers, ledgers, payments recv/made, bank match | Finance | ✅ |
 | F14 | E-invoice payload/record (IRN/ack) | Finance | ⬜ v2 (parked) |
 | F15 | Reports + PDF/Excel export | Reports | ✅ core |
@@ -75,7 +75,7 @@ The business runs two business models (Purchase–Sale and Job-Work) on manual t
 | F19 | Settings, theme (light/dark), profile | Settings | ✅ |
 | F20 | Workforce + attendance | Workforce | ⬜ v2 (parked) |
 | F21 | Analytics dashboard | Analytics | ✅ (shipped post-MVP) |
-| F22 | Audit log | Cross-cutting | ✅ |
+| F22 | Append-only ledgers + `audit_log` table (admin-only RLS; per-mutation trigger pending) | Cross-cutting | ◑ |
 
 **MVP cut line:** F1–F13, core F15, F16–F19, F22. Deferred: F14, F20, and long-tail reports.
 *(Because the UI was frozen, every screen ships; "deferred" = backend wiring stubbed for v2.)*
@@ -100,7 +100,7 @@ The business runs two business models (Purchase–Sale and Job-Work) on manual t
 | Category | Requirement |
 |----------|-------------|
 | **Correctness** | Money = integer paise; quantity = integer milli-kg; never floats |
-| **Security** | RLS default-deny + per-role; finance denied to ops; secrets server-side; append-only ledgers; audit log |
+| **Security** | RLS default-deny + per-role; finance denied to ops; secrets server-side; append-only ledgers (trigger-blocked) |
 | **Reliability** | Atomic transactions; idempotent retries on flaky 4G; graceful degradation |
 | **Cost** | ₹0/month; no payment card on any cloud account |
 | **Quality** | lint 0 · strict TypeScript · tests green · build green at every commit |

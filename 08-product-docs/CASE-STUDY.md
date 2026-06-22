@@ -13,7 +13,7 @@ WhatsApp to a **beyond-MVP, mobile-first ERP** with exact money/GST maths, balan
 and a signed-APK release pipeline — built **solo as both Product Manager and Developer**, directing an
 AI coding agent, at **₹0/month** running cost.
 
-**28 screens · 24 DB migrations · 18 Edge Functions · 51 tests green · balanced ledger · ₹0/month.**
+**28 screens · 24 DB migrations · 19 Edge Functions · 51 tests green · balanced ledger · ₹0/month.**
 
 ---
 
@@ -56,7 +56,7 @@ decision log**.
 + Supabase), designed a 35-table relational schema with **append-only ledgers**, locked the core
 invariants (**money in integer paise, quantity in integer milli-kg, never floats**), and enforced
 security with **Row-Level Security** (finance denied to the ops role), server-side secrets, and an
-immutable audit log. I implemented atomic transaction functions and 18 Edge Functions for GST,
+append-only ledgers. I implemented atomic transaction functions and 19 Edge Functions for GST,
 valuation, vouchers, and reporting, and kept **four quality gates green at every commit**.
 
 **Directing an AI coding agent** as a force-multiplier, I owned the spec, the decisions, the reviews,
@@ -71,12 +71,12 @@ Sheet, and Aging on the now-verified ledger.
 ## Result
 
 - **Beyond MVP, feature-complete for the core business** — 28 screens live on a real backend, 24
-  migrations applied, 18 Edge Functions deployed.
-- **Financially correct** — `verify_ledger()` returns **balanced**; valuation passes golden-number tests
-  to the paisa; GST is split automatically and job-work is billed charges-only.
+  migrations applied, 19 Edge Functions deployed.
+- **Financially correct** — `verify_ledger()` returns **balanced**; money is integer-paise throughout;
+  GST is split automatically and job-work is billed charges-only.
 - **Engineered to a bar** — **51 tests** passing; lint 0 / strict TypeScript / build green at every
   commit; CI restored to green and producing a real APK artefact.
-- **Secure & auditable** — RLS, server-side secrets, append-only ledgers, immutable audit log, verified
+- **Secure & tamper-evident** — RLS, server-side secrets, append-only financial & stock ledgers, verified
   key rotation.
 - **₹0/month** with full ownership and a self-hostable stack (no lock-in), and a **signing-ready release
   pipeline**.

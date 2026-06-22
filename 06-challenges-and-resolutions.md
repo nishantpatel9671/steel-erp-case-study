@@ -20,12 +20,14 @@ an audit and compliance failure (logged up-front as risk **R1**).
 
 **Action.** I locked a hard invariant: **money is stored as integer paise, quantity as integer
 milli-kg — never floats** — and scaling to rupees/kg happens *only at display* via dedicated
-formatters. Valuation (WAC/FIFO) and GST maths were built as pure functions with **golden-number unit
-tests** (e.g. FIFO + WAC across multiple inwards, asserted "to the paisa"). The rule was enforced
+formatters. The money/quantity conversion helpers and the finance-derivation logic (aging, trial-balance
+sign, FY dates) were built as pure functions with **unit tests** (`money.test.ts` and friends — 51 cases
+across 6 files); valuation (WAC/FIFO) and GST run as server-side functions. The integer rule was enforced
 consistently and made part of every relevant Definition of Done.
 
-**Result.** No float arithmetic touches money anywhere in the system; valuation and tax are exact and
-test-covered. This is the foundation the entire finance module stands on.
+**Result.** No float arithmetic touches money anywhere in the system; the money/quantity foundation is
+unit-tested and tax/valuation run server-side on integers. This is the foundation the entire finance
+module stands on.
 
 ---
 
@@ -165,12 +167,13 @@ touching code.*
 **Action.** Only the safe public (anon) key ships in the client; **Row-Level Security** (default-deny +
 per-role policies) is the authorization backbone, with finance tables **explicitly denied to the ops
 role** — enforced in the database *and* re-checked in the UI for defence-in-depth. Sensitive functions
-are `SECURITY DEFINER` with a pinned `search_path` and least-privilege grants; ledgers are append-only;
-every mutation writes an immutable **audit log**. When a key was suspected exposed, I **rotated it and
-verified the old one was dead** (REST 401), recording the change in the out-of-git registry.
+are `SECURITY DEFINER` with a pinned `search_path` and least-privilege grants; the financial and stock
+**ledgers are append-only** (UPDATE/DELETE blocked by a DB trigger), and an admin-only `audit_log` table
+is in place for recording mutations. When a key was suspected exposed, I **rotated it and verified the
+old one was dead** (REST 401), recording the change in the out-of-git registry.
 
 **Result.** An ops-role query against finance tables returns **zero rows**; secrets stay server-side;
-mutations are auditable; key rotation is a documented, verified procedure.
+the ledgers are tamper-evident (append-only); key rotation is a documented, verified procedure.
 
 ---
 

@@ -70,9 +70,9 @@ is what kept "done" honest across a solo build. Examples straight from the task 
 | Task | Definition of Done |
 |------|--------------------|
 | Multi-truck inward (`receive-inward`) | *"2 inwards on one Supplier PO → 100% received, balance 0; multi-item bill renders."* |
-| Valuation engine (FIFO/WAC) | *"Golden-number unit tests (FIFO + WAC, multi-inward) pass to the paisa."* |
+| Money & quantity | *"Integer paise / milli-kg throughout; conversion helpers unit-tested to the paisa; never a float."* |
 | Dispatch + invoice series | *"Invoice numbers gapless per series; job-work invoice has SAC + charges, no material line."* |
-| GST + E-Way | *"Inter → IGST, intra → split; ₹49k no prompt, ₹51k prompts."* |
+| GST on dispatch | *"Inter-state → IGST; intra-state → CGST + SGST; job-work billed as SAC charges, no material line."* |
 | Job cards | *"Production moves raw → finished goods; a job-work card doesn't touch the company's stock value."* |
 | Double-entry posting | *"Every dispatch/inward/payment posts a balanced entry (Σ debit = Σ credit)."* |
 | Roles + RLS | *"An Ops query on `payments` returns 0 rows; Finance succeeds."* |

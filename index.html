@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steel ERP — Product &amp; Engineering Case Study</title>
+  <meta name="description" content="A mobile-first ERP that digitized a steel manufacturing MSME — order-to-cash, GST, double-entry finance. Scoped, built and shipped solo (product + engineering).">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body id="top">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="./"><span class="logo">S</span> Steel ERP</a>
+      <nav class="nav-links">
+        <a href="#tour">Screens</a>
+        <a class="hide-sm" href="#built">How it's built</a>
+        <a href="08-product-docs/CASE-STUDY.html">Case study</a>
+        <a class="btn btn-primary" href="https://github.com/nishantpatel9671/steel-erp-case-study">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero" style="padding:0">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Product · Engineering · Case study</span>
+        <h1>An ERP that took a steel manufacturer from paper to a production-grade app.</h1>
+        <p class="lead">Internal, mobile-first, and financially correct — covering the full order-to-cash
+          chain with exact money &amp; GST. Scoped, built, and shipped <strong>end-to-end by one person</strong>:
+          product and engineering. Beyond MVP, ₹0/month to run.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#tour">View the screens</a>
+          <a class="btn btn-ghost" href="08-product-docs/CASE-STUDY.html">Read the case study</a>
+        </div>
+        <div class="chips">
+          <div class="chip"><b>28</b><span>Screens</span></div>
+          <div class="chip"><b>51</b><span>Tests green</span></div>
+          <div class="chip"><b>₹0</b><span>per month</span></div>
+          <div class="chip"><b>100%</b><span>Free-tier stack</span></div>
+        </div>
+      </div>
+      <div class="hero-phone">
+        <a class="phone" href="screenshots/01-home-light.png" title="Home screen">
+          <img src="screenshots/01-home-light.png" alt="Steel ERP home screen">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- problem / solution -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The brief</span>
+        <h2>A two-model steel business running on paper</h2>
+        <p>A steel round-bar MSME in Gujarat buys and processes bars to sell, and also processes
+           customers' material for a fee — with no single source of truth.</p>
+      </div>
+      <div class="two-col">
+        <div class="panel problem">
+          <h3>The problem</h3>
+          <ul>
+            <li>Orders, stock, job cards &amp; finance on paper, spreadsheets, and WhatsApp.</li>
+            <li>Error-prone money &amp; GST maths; risky sale-vs-job-work confusion.</li>
+            <li>No audit trail, no real-time view of stock, receivables, or production.</li>
+            <li>Off-the-shelf ERPs are costly and don't fit draw-bench + job-work reality.</li>
+          </ul>
+        </div>
+        <div class="panel solution">
+          <h3>The solution</h3>
+          <ul>
+            <li>One internal Android app for the entire order-to-cash chain.</li>
+            <li>Exact money (integer paise) + automated GST split, enforced by the backend.</li>
+            <li>Double-entry books that reconcile; append-only, tamper-evident ledgers.</li>
+            <li>Purpose-built, owned outright, ₹0/month to run.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- business models + flow -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The domain</span>
+        <h2>Two business models, one system</h2>
+        <p>The core product insight: keep Purchase–Sale and Job-Work strictly separate so a customer's
+           material is never valued as company stock or claimed for GST input.</p>
+      </div>
+      <div class="cards">
+        <div class="model">
+          <span class="tag">Purchase–Sale</span>
+          <h3>Buy → draw → sell</h3>
+          <p>Buy raw bars, process them on draw benches into finished bright bars, sell on a full GST
+             invoice. Material enters stock value; GST input credit applies.</p>
+        </div>
+        <div class="model">
+          <span class="tag">Job-Work</span>
+          <h3>Process customer material</h3>
+          <p>Customer's own material comes in, is processed, and returned — billed as charges only (SAC).
+             It never enters the company's stock value and claims no GST input.</p>
+        </div>
+      </div>
+      <div class="flow" style="margin-top:26px">
+        <span class="step">Sales Order</span><span class="arrow">→</span>
+        <span class="step">Supplier PO / Inward</span><span class="arrow">→</span>
+        <span class="step">Job Card (draw bench)</span><span class="arrow">→</span>
+        <span class="step">Finished goods</span><span class="arrow">→</span>
+        <span class="step">Dispatch + GST</span><span class="arrow">→</span>
+        <span class="step">Payment</span>
+      </div>
+      <p style="text-align:center;color:var(--muted);margin-top:14px;font-size:14.5px">
+        Every step posts a balanced double-entry voucher to the ledger.</p>
+    </div>
+  </section>
+
+  <!-- product tour -->
+  <section class="alt" id="tour">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Product tour</span>
+        <h2>The app, screen by screen</h2>
+        <p>Real screens with authentic data (owners approved a partial real-data showcase). Tap any
+           screen to view it full-size.</p>
+      </div>
+
+      <div class="tour-group">
+        <h3>Operations &amp; Orders</h3>
+        <div class="gallery">
+          <a class="shot" href="screenshots/01-home-light.png"><span class="frame"><img src="screenshots/01-home-light.png" alt="Home"></span><span class="cap"><b>Home</b><span>KPIs, alerts &amp; module grid</span></span></a>
+          <a class="shot" href="screenshots/02-orders-list.png"><span class="frame"><img src="screenshots/02-orders-list.png" alt="Orders"></span><span class="cap"><b>Orders</b><span>Sales-order pipeline &amp; status</span></span></a>
+          <a class="shot" href="screenshots/03b-sales-order-flow.png"><span class="frame"><img src="screenshots/03b-sales-order-flow.png" alt="Document chain"></span><span class="cap"><b>Document chain</b><span>PO → Job Cards → Dispatch → Payment</span></span></a>
+          <a class="shot" href="screenshots/04-inventory.png"><span class="frame"><img src="screenshots/04-inventory.png" alt="Inventory"></span><span class="cap"><b>Inventory</b><span>Cost lots, WAC value, low-stock alerts</span></span></a>
+        </div>
+      </div>
+
+      <div class="tour-group">
+        <h3>Finance &amp; GST</h3>
+        <div class="gallery">
+          <a class="shot" href="screenshots/05-gst.png"><span class="frame"><img src="screenshots/05-gst.png" alt="GST returns"></span><span class="cap"><b>GST returns</b><span>CGST / SGST / IGST split</span></span></a>
+          <a class="shot" href="screenshots/06-trial-balance.png"><span class="frame"><img src="screenshots/06-trial-balance.png" alt="Trial balance"></span><span class="cap"><b>Trial balance</b><span>Books-health: balanced ledger</span></span></a>
+          <a class="shot" href="screenshots/07-profit-loss.png"><span class="frame"><img src="screenshots/07-profit-loss.png" alt="Profit and loss"></span><span class="cap"><b>Profit &amp; Loss</b><span>Period-filtered, ledger-derived</span></span></a>
+        </div>
+      </div>
+
+      <div class="tour-group">
+        <h3>Analytics &amp; theme</h3>
+        <div class="gallery">
+          <a class="shot" href="screenshots/08-analytics-dashboard.png"><span class="frame"><img src="screenshots/08-analytics-dashboard.png" alt="Dashboard"></span><span class="cap"><b>Dashboard</b><span>6-month trend &amp; production output</span></span></a>
+          <a class="shot" href="screenshots/09-home-dark.png"><span class="frame"><img src="screenshots/09-home-dark.png" alt="Dark mode"></span><span class="cap"><b>Dark mode</b><span>Light &amp; dark themes</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- metrics -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">By the numbers</span>
+        <h2>Shipped, beyond MVP</h2>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>28</b><span>Screens on a live backend</span></div>
+        <div class="metric"><b>24</b><span>Database migrations</span></div>
+        <div class="metric"><b>19</b><span>Server-side Edge Functions</span></div>
+        <div class="metric"><b>51</b><span>Automated tests, green</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how it's built -->
+  <section class="alt" id="built">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Engineering</span>
+        <h2>How it's built</h2>
+        <p>A free-first, self-hostable stack — with the correctness and security bar of a much bigger team.</p>
+      </div>
+      <div class="stack">
+        <span class="t">Capacitor 6</span><span class="t">React 18</span><span class="t">TypeScript (strict)</span>
+        <span class="t">Vite 6</span><span class="t">Supabase</span><span class="t">PostgreSQL</span>
+        <span class="t">Row-Level Security</span><span class="t">Edge Functions</span><span class="t">TanStack Query</span>
+        <span class="t">Zustand</span><span class="t">Zod</span><span class="t">Vitest</span><span class="t">GitHub Actions</span>
+      </div>
+      <ul class="quality">
+        <li>Double-entry finance with a reconciliation check (<code>verify_ledger()</code> balanced)</li>
+        <li>Append-only financial &amp; stock ledgers (UPDATE/DELETE trigger-blocked)</li>
+        <li>Row-Level Security — finance data denied to the operations role</li>
+        <li>Integer-paise money &amp; integer milli-kg quantity — never a float</li>
+        <li>Automated intra/inter-state GST split; job-work billed charges-only</li>
+        <li>On-device OCR bill capture (free ML Kit / Tesseract stack)</li>
+        <li>51 tests; lint 0 / strict TypeScript / build green in CI</li>
+        <li>Signed-APK CI pipeline; ₹0/month run cost, no vendor lock-in</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section>
+    <div class="wrap about">
+      <span class="eyebrow">The builder</span>
+      <h2>One person, both hats</h2>
+      <p>I owned this end-to-end as <strong>Product Manager</strong> (discovery, PRD/BRD, roadmap,
+         prioritization, stakeholder management, release gating) and <strong>Developer / Tech Lead</strong>
+         (architecture, database &amp; security, CI/CD, testing) — directing an AI coding agent as a
+         force-multiplier under my spec and review. The skill on display is knowing <em>what</em> to build,
+         deciding <em>how</em>, enforcing correctness, and reviewing everything that came back.</p>
+      <div class="hero-cta" style="justify-content:center;margin-top:18px">
+        <a class="btn btn-primary" href="02-role-and-responsibilities.html">My role &amp; responsibilities</a>
+        <a class="btn btn-ghost" href="06-challenges-and-resolutions.html">Challenges &amp; how I solved them</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- docs -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Read the full case study</span>
+        <h2>The documents</h2>
+      </div>
+      <div class="docs">
+        <a class="doc-card" href="01-product-overview.html"><b>1 · Product Overview</b><span>The product, the two models, six fulfillment paths, and who uses it</span></a>
+        <a class="doc-card" href="02-role-and-responsibilities.html"><b>2 · My Role</b><span>The PM + Developer dual role, with concrete evidence</span></a>
+        <a class="doc-card" href="03-requirements-gathering.html"><b>3 · Requirements Gathering</b><span>"Prototype as the contract"; the open-questions log</span></a>
+        <a class="doc-card" href="04-requirements-to-user-stories.html"><b>4 · Requirements → Stories</b><span>Business rules → features → milestones → Definition of Done</span></a>
+        <a class="doc-card" href="05-prioritization-and-stakeholders.html"><b>5 · Prioritization</b><span>MVP cut line, free-first constraint, parked-feature log</span></a>
+        <a class="doc-card" href="06-challenges-and-resolutions.html"><b>6 · Challenges</b><span>The hard problems and how I solved them (STAR)</span></a>
+        <a class="doc-card" href="07-outcome-and-impact.html"><b>7 · Outcome &amp; Impact</b><span>What shipped, the quality bar, business value</span></a>
+        <a class="doc-card" href="08-product-docs/README.html"><b>8 · Product Docs</b><span>PRD · BRD · User Stories · Case Study</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong>Steel ERP — Product &amp; Engineering Case Study</strong><br>
+        <span class="muted">Business identifiers anonymized for public sharing; screenshots show authentic, owner-approved data.</span>
+      </div>
+      <div class="muted">
+        <a href="https://github.com/nishantpatel9671/steel-erp-case-study">GitHub</a> ·
+        <a href="mailto:nishantpatel9671@gmail.com">Email</a>
+        <!-- Add your LinkedIn here, e.g. · <a href="https://linkedin.com/in/your-handle">LinkedIn</a> -->
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

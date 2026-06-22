@@ -66,10 +66,10 @@ operator always knows which path a line is on.
 | **Inventory** | Cost-lot stock ledger, WAC/FIFO valuation, manual adjustments, scrap batches, pickling-loss logging, long-term-storage flags |
 | **Production** | Job cards with material/output logs, per-draw-bench queue, die auto-match by diameter, yield/scrap tracking |
 | **Dies & Stores** | Dies by internal diameter (with rework that enlarges the bore to the next standard size), consumables, spare bills |
-| **Dispatch & GST** | Sale + job-work dispatch, **multi-truck** dispatch, gap-free invoice series, intra/inter-state GST split, E-Way bill prompt above ₹50,000 |
+| **Dispatch & GST** | Sale + job-work dispatch, **multi-truck** dispatch, gap-free invoice series, intra/inter-state GST split, E-Way bill no./date capture (manual + OCR) |
 | **Finance** | Chart of accounts, double-entry journal, voucher templates, ledgers, payments received/made, trial balance, P&L, balance sheet, aging |
 | **Reporting & Analytics** | Report library with CSV/PDF export, 6-month trend charts, production-output analytics |
-| **Cross-cutting** | Universal search, parties (buyers/suppliers) master, notifications/alerts, settings, light/dark theme, immutable audit log |
+| **Cross-cutting** | Universal search, parties (buyers/suppliers) master, notifications/alerts, settings, light/dark theme, append-only financial & stock ledgers |
 
 ## 1.6 Target users & personas
 

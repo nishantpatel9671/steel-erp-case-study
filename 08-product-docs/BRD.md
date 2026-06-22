@@ -52,8 +52,10 @@ GST-input/compliance exposure.
    sales order.
 9. **Dies by diameter** — rework enlarges the bore to the next standard diameter; track reorder + rework
    count.
-10. **E-Way bill** — required only above ₹50,000; prompt conditionally.
-11. **Audit** — every create/edit/delete logged with user + timestamp; ledgers append-only.
+10. **E-Way bill** — legally required above ₹50,000; the app records the E-Way bill no./date on
+    dispatches & inward bills (manual entry or OCR-extracted). *(Threshold is not auto-enforced in-app.)*
+11. **Audit** — financial & stock ledgers are append-only (UPDATE/DELETE blocked by a DB trigger); an
+    admin-only `audit_log` table is provisioned for mutation logging.
 12. **Access** — finance data restricted to the finance/admin roles; operations role denied.
 
 ## 5. Constraints
@@ -81,7 +83,7 @@ GST-input/compliance exposure.
 | # | Risk | Mitigation |
 |---|------|------------|
 | R1 | Money/qty as floats → valuation & GST drift | Integer paise + milli-kg; round only at display |
-| R2 | Inventory valuation (FIFO/WAC, multi-inward, pickling loss) is the hardest module | Pure, unit-tested server functions; lock valuation method early |
+| R2 | Inventory valuation (FIFO/WAC, multi-inward, pickling loss) is the hardest module | Pure server-side functions on integer paise; money/qty conversion unit-tested; lock valuation method early |
 | R3 | Job-work vs purchase confusion in financials | `order_type` enum at DB; separate ledgers; no GST input on job-work |
 | R4 | Free-tier project pause after inactivity | Uptime ping + documented un-pause; self-host option |
 | R5 | Surprise billing if a card is attached | Do not attach a card to any cloud account |
@@ -89,7 +91,7 @@ GST-input/compliance exposure.
 | R7 | iOS needs a Mac + paid Apple Developer | Ship Android first (free); defer iOS |
 | R8 | Vendor lock-in to a managed backend | Pick open-source, self-hostable backends; keep SQL portable |
 | R9 | Secrets in the client bundle | Only the safe anon key ships; all secrets server-side; RLS |
-| R10 | Audit/compliance gaps | DB triggers write an immutable audit log on every mutation |
+| R10 | Audit/compliance gaps | Append-only ledgers enforced by DB triggers; `audit_log` table with admin-only RLS (generic per-mutation trigger not yet wired) |
 | R11 | Browser-CDN build (prototype) insecure/slow | Replaced by an ahead-of-time Vite build |
 | R12 | Drifting from the agreed UI during the port | Port verbatim; the prototype is the acceptance test |
 

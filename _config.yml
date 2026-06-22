@@ -1,11 +1,17 @@
-# GitHub Pages config — this repo serves Pages from the repository ROOT.
-# Settings → Pages → Source: Deploy from a branch → main → / (root).
-# The root README.md becomes the site homepage.
+# GitHub Pages config. Pages serves from the repo ROOT (Settings → Pages → main → / root).
+# index.html is the site homepage; the Markdown docs (01–08, README) render via _layouts/default.html.
 
 title: "Steel ERP — Product & Engineering Case Study"
 description: "A mobile-first ERP that digitized a steel manufacturing MSME. Solo product + engineering."
 author: "Nishant Patel"
 
-# Built-in GitHub Pages theme. Alternatives: jekyll-theme-minimal, jekyll-theme-architect,
-# jekyll-theme-slate, jekyll-theme-merlot.
-theme: jekyll-theme-cayman
+# Project site lives at /steel-erp-case-study/ — baseurl makes the layout's `relative_url`
+# asset/nav links resolve correctly.
+baseurl: "/steel-erp-case-study"
+
+# Custom layout + stylesheet instead of a prebuilt theme; applied to all Markdown pages.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -45,7 +45,7 @@ I owned it across both hats:
 |--------|-------|
 | Screens shipped (live backend) | **28** |
 | Database migrations applied | **24** (`0001`–`0024`) |
-| Server-side Edge Functions | **18** |
+| Server-side Edge Functions | **19** |
 | Automated tests | **51** passing |
 | Quality gates | lint **0** · TypeScript strict ✓ · tests ✓ · build ✓ |
 | Finance integrity | Double-entry ledger, **`verify_ledger()` balanced** |
@@ -95,7 +95,6 @@ Storage / Edge Functions)` · `TanStack Query` · `Zustand` · `React Hook Form 
 | 6 | [Challenges & Resolutions](06-challenges-and-resolutions.md) | The hard problems and how I solved them (STAR format) |
 | 7 | [Outcome & Business Impact](07-outcome-and-impact.md) | What shipped, the quality bar, and the business value |
 | 8 | [Product Documents](08-product-docs/README.md) | The formal artefacts: **PRD · BRD · User Stories · Case Study** |
-| 9 | [Showcase Guide](09-showcase-guide.md) | How this repo + website were set up |
 
 ---
 

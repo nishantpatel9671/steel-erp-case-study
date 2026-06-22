@@ -25,7 +25,7 @@ pipeline — built and shipped **beyond MVP** by one person at **₹0/month run 
 | **Trial Balance + books-health, P&L, Balance Sheet, Aging** (on a verified ledger) | ✅ |
 | Reports with CSV/PDF export + analytics trend charts | ✅ |
 | Auth (email OTP → backend bcrypt PIN + profile), RBAC, light/dark theme | ✅ |
-| Immutable audit log + append-only ledgers | ✅ |
+| Append-only financial & stock ledgers (UPDATE/DELETE trigger-blocked) | ✅ |
 | **Parked for later:** live e-invoice (IRN/IRP), workforce/attendance, bank reconciliation | ⏸️ |
 
 ## 7.3 Delivery metrics
@@ -34,7 +34,7 @@ pipeline — built and shipped **beyond MVP** by one person at **₹0/month run 
 |--------|-------|--------|
 | Screens shipped | **28** | milestone log |
 | Database migrations applied | **24** (`0001`–`0024`) | technical changelog (out-of-git registry) |
-| Edge Functions deployed | **18** | session log |
+| Edge Functions deployed | **19** | session log |
 | Automated tests | **51** passing (grew from 27) | QA report |
 | Quality gates | lint **0** · TypeScript strict ✓ · tests ✓ · build ✓ | enforced every commit |
 | Finance integrity | `verify_ledger()` **balanced** on live DB | challenge 3 |
@@ -50,7 +50,7 @@ Outcome isn't just "it works" — it's *how* it works:
 - **Correctness by construction** — integer money/qty, append-only ledgers enforced by triggers, and a
   reconciliation check (`verify_ledger`) that proves the books balance.
 - **Security by default** — Row-Level Security as the authorization backbone, finance data denied to the
-  ops role, secrets server-side, immutable audit log.
+  ops role, secrets server-side, append-only ledgers.
 - **Release discipline** — every working session is a **named rollback point**, with an *out-of-git
   registry* tracking the DB migrations and dashboard settings that `git revert` can't undo. Rolling
   back a bad change is a documented, low-loss procedure.
@@ -68,7 +68,7 @@ Outcome isn't just "it works" — it's *how* it works:
 | **Single source of truth** | Replaces paper books, drifting spreadsheets, and WhatsApp threads with one system covering order-to-cash. |
 | **Exact money & GST** | Integer-paise arithmetic + automated intra/inter-state GST split + job-work charges-only billing → correct invoices and correct tax treatment. |
 | **Compliance risk reduced** | Job-work vs purchase separation enforced at the database removes a real GST-input/valuation exposure. |
-| **Auditability** | Append-only ledgers + an immutable audit log → every create/edit/delete is attributable; the books are reconcilable on demand. |
+| **Auditability** | Append-only financial & stock ledgers (UPDATE/DELETE trigger-blocked) → the books are tamper-evident and reconcilable on demand via `verify_ledger()`. |
 | **Real-time operational view** | Live stock, receivables/payables aging, production queues, and low-stock/die-reorder alerts — instead of "ask someone". |
 | **Mobile-first for the floor** | The Operations owner runs inwards, job cards, and dispatch from an Android phone on the shop floor. |
 | **Zero run cost & full ownership** | Free-tier infrastructure with no card attached (no surprise billing), open-source/self-hostable stack (no lock-in), owned outright by the business. |
