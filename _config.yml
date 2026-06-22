@@ -1,0 +1,11 @@
+# GitHub Pages config — this repo serves Pages from the repository ROOT.
+# Settings → Pages → Source: Deploy from a branch → main → / (root).
+# The root README.md becomes the site homepage.
+
+title: "Steel ERP — Product & Engineering Case Study"
+description: "A mobile-first ERP that digitized a steel manufacturing MSME. Solo product + engineering."
+author: "Nishant Patel"
+
+# Built-in GitHub Pages theme. Alternatives: jekyll-theme-minimal, jekyll-theme-architect,
+# jekyll-theme-slate, jekyll-theme-merlot.
+theme: jekyll-theme-cayman

@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp
+
+# Jekyll local build (if you ever run Pages locally)
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
