@@ -1,6 +1,6 @@
 # 1 · Product Overview & Target Users
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 
@@ -117,4 +117,4 @@ the business.
 
 ---
 
-[← Back to index](README.md) · [Next: My Role & Responsibilities →](02-role-and-responsibilities.md)
+[← Back to index](./) · [Next: My Role & Responsibilities →](02-role-and-responsibilities.md)

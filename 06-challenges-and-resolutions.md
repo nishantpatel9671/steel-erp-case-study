@@ -1,6 +1,6 @@
 # 6 · Key Challenges & How I Resolved Them
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 

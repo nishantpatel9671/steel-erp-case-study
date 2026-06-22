@@ -1,6 +1,6 @@
 # 5 · Prioritization & Stakeholder Management
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 

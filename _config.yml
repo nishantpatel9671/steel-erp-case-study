@@ -1,5 +1,5 @@
 # GitHub Pages config. Pages serves from the repo ROOT (Settings → Pages → main → / root).
-# index.html is the site homepage; the Markdown docs (01–08, README) render via _layouts/default.html.
+# index.html is the site homepage; the Markdown docs (01–08) render via _layouts/default.html.
 
 title: "Steel ERP — Product & Engineering Case Study"
 description: "A mobile-first ERP that digitized a steel manufacturing MSME. Solo product + engineering."
@@ -15,3 +15,8 @@ defaults:
       path: ""
     values:
       layout: default
+
+# README.md is the GitHub *repo* landing page, not a site page — nothing on the site links to it,
+# so keep it out of the published build (prevents a raw /README.md from being served).
+exclude:
+  - README.md

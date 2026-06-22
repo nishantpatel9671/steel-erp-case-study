@@ -1,6 +1,6 @@
 # 4 · From Business Requirements to Development Tasks & User Stories
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 

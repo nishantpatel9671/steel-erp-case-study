@@ -1,6 +1,6 @@
 # 3 · How I Gathered & Understood Requirements
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 

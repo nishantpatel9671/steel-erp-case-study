@@ -2,7 +2,7 @@
 
 > A product-and-engineering case study. 🔒 Business identifiers anonymized for public sharing.
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)
 
 ---
 
@@ -95,4 +95,4 @@ Sheet, and Aging on the now-verified ledger.
 
 ---
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)

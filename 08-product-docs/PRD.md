@@ -3,7 +3,7 @@
 > **Status:** Shipped (beyond MVP) · **Type:** Internal mobile ERP · **Owner:** Solo PM + Developer
 > 🔒 Business identifiers anonymized for public sharing.
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)
 
 ---
 
@@ -119,4 +119,4 @@ confusion, valuation complexity, free-tier pauses, secrets-in-client, and more, 
 
 ---
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)

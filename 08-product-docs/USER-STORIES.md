@@ -4,7 +4,7 @@
 > from the original tasks' Definitions of Done, so each story is verifiable.
 > 🔒 Business identifiers anonymized for public sharing.
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)
 
 **Roles:** **Ops** = Operations owner · **Fin** = Finance owner · **Admin** = either owner.
 
@@ -137,4 +137,4 @@ statements reflect reality, not stale numbers.*
 
 ---
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)

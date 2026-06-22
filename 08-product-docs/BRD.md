@@ -2,7 +2,7 @@
 
 > 🔒 Business identifiers anonymized for public sharing.
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)
 
 ---
 
@@ -104,4 +104,4 @@ GST-input/compliance exposure.
 
 ---
 
-[← Back to Product Documents](README.md)
+[← Back to Product Documents](./)

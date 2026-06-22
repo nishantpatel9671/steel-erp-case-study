@@ -1,6 +1,6 @@
 # 2 · My Role & Key Responsibilities
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 

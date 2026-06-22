@@ -1,6 +1,6 @@
 # 8 · Product Documents
 
-[← Back to portfolio index](../README.md)
+[← Back to portfolio index](../)
 
 ---
 
@@ -18,4 +18,4 @@ condensed and anonymized for sharing.
 
 ---
 
-[← Back to portfolio index](../README.md)
+[← Back to portfolio index](../)

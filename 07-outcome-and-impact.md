@@ -1,6 +1,6 @@
 # 7 · Project Outcome & Business Impact
 
-[← Back to index](README.md)
+[← Back to index](./)
 
 ---
 
@@ -92,4 +92,4 @@ running cost.**
 
 ---
 
-[← Previous: Challenges & Resolutions](06-challenges-and-resolutions.md) · [Next: Product Documents →](08-product-docs/README.md)
+[← Previous: Challenges & Resolutions](06-challenges-and-resolutions.md) · [Next: Product Documents →](08-product-docs/)
